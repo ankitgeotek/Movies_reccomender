@@ -34,7 +34,7 @@ def recommend(movie):
 
 similarity = pickle.load( open('similarity.pkl', "rb"))
 
-
+st.caption("author: ankitgeotek@gmail.com")
 st.title("Movies Recommender System")
 
 selected_movie_name = st.selectbox("How would you like to be contacted",movies['title'].values)
