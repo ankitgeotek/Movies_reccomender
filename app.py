@@ -4,7 +4,7 @@ import pandas as pd
 
 import requests # to hit the API
 
-movies_dict = pickle.load( open(r'A:\Work Docs\Data Analyst work\Campus X\10 Streamlit\03_movie_rec_sys\movie_dict.pkl', "rb"))
+movies_dict = pickle.load( open('movie_dict.pkl', "rb"))
 movies = pd.DataFrame(movies_dict)
 
 def fetch_poster(movie_id):
@@ -32,12 +32,12 @@ def recommend(movie):
     return recommend_movies, recommend_movies_posters
 
 
-similarity = pickle.load( open(r'A:\Work Docs\Data Analyst work\Campus X\10 Streamlit\03_movie_rec_sys\similarity.pkl', "rb"))
+similarity = pickle.load( open('similarity.pkl', "rb"))
 
 
 st.title("Movies Recommender System")
 
-selected_movie_name = st.selectbox("How wouldyou like to be contacted",movies['title'].values)
+selected_movie_name = st.selectbox("How would you like to be contacted",movies['title'].values)
 
 # Button code
 if st.button("Recommend"):
